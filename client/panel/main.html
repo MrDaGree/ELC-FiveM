@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELC Panel</title>
+
+    
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+        @font-face{
+        font-family:'digital';
+        src: url('digital.ttf');
+        }
+
+        body {
+            -webkit-animation-delay: 0.1s;
+            -webkit-animation-name: fontfix;
+            -webkit-animation-duration: 0.1s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: linear;
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            font-family: 'Roboto', sans-serif;
+            background-color: transparent;
+        }
+
+        @-webkit-keyframes fontfix {
+            from { opacity: 1; }
+            to   { opacity: 1; }
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-size: 1.1em;
+        }
+
+        .container {
+          width: 100%;
+        }
+
+        .row {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 4%;
+        }
+
+        /* content */
+        .row div {
+          padding-top: 1.5%;
+          padding-bottom: 1.5%;
+        }
+
+        /* 1/12 */
+        .col-1 {
+          width: 10.33%;
+        }
+
+        /* 2/12 */
+        .col-2 {
+          width: 16.66%;
+        }
+
+        /* 3/12 */
+        .col-3 {
+          width: 25%;
+        }
+
+        /* 4/12 */
+        .col-4 {
+          width: 33.33%
+        }
+
+        /* 5/12 */
+        .col-5 {
+          width: 41.66%;
+        }
+
+        /* 6/12 */
+        .col-6 {
+          width: 50%;
+        }
+
+        /* 7/12 */
+        .col-7 {
+          width: 58.33%;
+        }
+
+        /* 8/12 */
+        .col-8 {
+          width: 66.66%;
+        }
+
+        /* 9/12 */
+        .col-9 {
+          width: 75%;
+        }
+
+        /* 10/12 */
+        .col-10 {
+          width: 83.33%;
+        }
+
+        /* 11/12 */
+        .col-11 {
+          width: 91.66%;
+        }
+
+        /* 12/12 */
+        .col-12 {
+          width: 100%;
+        }
+
+        /* viewport <= 1000px */
+        @media screen and (max-width: 1000px) {
+          * {
+            font-size: 1em;
+          }
+        }
+
+        /* viewport <= 630px */
+        @media screen and (max-width: 630px) {
+          .row div {
+            padding: 1.5%;  
+          }    
+        } 
+
+        /* viewport <= 500px */
+        @media screen and (max-width: 500px) {
+          * {
+            font-size: 0.9em;
+          }
+        }
+
+        #panel {
+            padding: 0.3% 0%;
+            margin-left: 70.4vw;
+            margin-top: 75vh;
+            background-color: rgba(35, 35, 35, 100);
+            border-radius: 5px;
+            border: 5px solid black;
+            height: 100%;
+            min-width: 420px;
+            max-width: 500px;
+
+            display: none;
+            justify-content: center;
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        #info {
+            padding-bottom: 8px;
+            justify-content: center;
+
+            order: 1;
+        }
+        
+        #pattern-info{
+            margin-right: 0px;
+            height: 100%;
+            max-height: 70px;
+
+            background-color: black;
+            border: 2px solid gray;
+            
+            display: flex;
+        }
+
+        #pattern-info * {
+            margin: 0px;
+        }
+
+        #pattern-info h1 {
+            color:red;
+            font-size:38px;
+            letter-spacing: 2px;
+            font-family: 'digital', sans-serif;
+        }
+
+        #pattern-info h4 {
+            color:gray;
+            font-size: 12px;
+        }
+
+        #pattern-info #pattern {
+          margin-right: auto;
+        }
+
+        #stages {
+            margin-left: auto;
+            margin-right: 35%;
+        }
+
+        #stages > div{
+            margin-left: 4%;
+            margin-top: 20%;
+            margin-right: 45%;
+            
+            width: 10.4px;
+            height: 10.4px;
+            background-color: rgb(35, 35, 35);
+
+            color: gray;
+        }
+
+        #stageone, #stagetwo, #stagethree {
+            margin-bottom: 50%;
+        }
+
+        #stageone p, #stagetwo p, #stagethree p{
+            margin-left: 15px;
+            font-size: 9px;
+        }
+
+        #light-info{
+            margin-left: 5%;
+            height: 100%;
+            max-height: 70px;
+
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            order: 2;
+            flex-wrap: wrap;
+
+            padding-top: 3.735%;
+            padding-bottom: 3.735%;
+
+            background-color: black;
+            border: 2px solid gray;
+        }
+ 
+        #light-info h1 {
+            text-align: center;
+            font-size: 22px;
+            padding-bottom: 0px;
+            color:gray;
+            flex-basis: 100%;
+        }
+
+        #light-info .light {
+            width: 25.4px;
+            height: 6.8px;
+            background-color: rgb(35, 35, 35);
+            margin: 2px;
+            padding-left: 0px;
+            padding-right: 0px;
+            border-radius: 2px;
+        }
+
+        #buttons {
+            justify-content: center;
+            align-self: flex-start;
+            order: 2;
+        }
+
+        .button {
+            background-color: rgb(35, 35, 35);
+            margin: 4.5px;
+            border-radius: 5px;
+            border: 3px solid gray;
+            color: gray;
+            text-align: center;
+            z-index: 9999;
+        }
+
+        .button p {
+            margin: 0px;
+            padding-top: 10%;
+            font-weight: 700;
+            font-size: .62rem;
+        }
+
+        .button .padding-extra {
+            margin-top: 13%;
+        }
+
+        .buttonActive{
+            color: red;
+            border-color: red;
+        }
+
+        #info-bottom {         
+          justify-content: center;
+          order: 2;
+          flex-wrap: wrap;
+        }
+
+        #info-bottom .col-6 {
+          padding-bottom: 0%;
+        }
+
+        #info-bottom p {
+            font-size: .5rem;
+            color: lime;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        #info-bottom #name {
+            color: gray;
+        }
+    </style>
+</head>
+    <body>
+        
+        <div class="container" id="panel">
+            <div class="row" id="info">
+                <div class="col-4" id="pattern-info">
+                    <div id="stages">
+                        <div id="stageone"> <p>ONE</p></div>
+                        <div id="stagetwo"> <p>TWO</p></div>
+                        <div id="stagethree"> <p>THREE</p></div>
+                    </div>
+                    <div id="pattern">
+                        <h4>PATTERN</h4>
+                        <h1 id="pattern-number">001</h1>
+                    </div>
+                </div>
+                <div class="col-7" id="light-info">
+                    <h1>SmartController</h1>
+
+                    <div id="light-31" class="light"></div>
+                    <div id="light-32" class="light"></div>
+                    <div id="light-34" class="light"></div>
+                    <div id="light-35" class="light"></div>
+                    <div id="light-36" class="light"></div>
+                    <div id="light-43" class="light"></div>
+                </div>
+            </div>
+            <div class="row" id="buttons">
+                <div id="int_light" class="button col-1" onclick="buttonPressed('#int_light');">
+                    <p>INT LIGHT</p>
+                </div>
+                <div id="parkmode" class="button col-1" onclick="buttonPressed('#parkmode');">
+                    <p>PARK MODE</p>
+                </div>
+                <div id="wrnlpat" class="button col-1">
+                    <p>-</p>
+                </div>
+                <div id="mantone" class="button col-1" onclick="buttonPressed('#mantone');">
+                    <p>MAN TONE</p>
+                </div>
+                <div id="wail" class="button col-1">
+                    <p class="padding-extra">WAIL</p>
+                </div>
+                <div id="yelp" class="button col-1">
+                    <p class="padding-extra">YELP</p>
+                </div>
+                <div id="aux" class="button col-1">
+                    <p class="padding-extra">AUX</p>
+                </div>
+                <div id="ahorn" class="button col-1">
+                    <p class="padding-extra">A/H</p>
+                </div>
+            </div>
+
+            <div class="row" id="buttons">
+              <div id="l_alley" class="button col-1" onclick="buttonPressed('#l_alley');">
+                  <p>LEFT ALLEY</p>
+              </div>
+              <div id="takedown" class="button col-1" onclick="buttonPressed('#takedown');">
+                  <p>TAKE DOWN</p>
+              </div>
+              <div id="r_alley" class="button col-1" onclick="buttonPressed('#r_alley');">
+                  <p>RIGHT ALLEY</p>
+              </div>
+              <div id="stdyburn" class="button col-1" onclick="buttonPressed('#stdyburn');">
+                  <p>STEAD BURN</p>
+              </div>
+              <div id="cruiselght" class="button col-1" onclick="buttonPressed('#cruiselght');">
+                  <p>CRUIS LIGHT</p>
+              </div>
+              <div id="ta_left" class="button col-1" onclick="taButtonPressed('#ta_left');">
+                  <p>TA LEFT</p>
+              </div>
+              <div id="ta_center" class="button col-1" onclick="taButtonPressed('#ta_center');">
+                  <p>TA CENTR</p>
+              </div>
+              <div id="ta_right" class="button col-1" onclick="taButtonPressed('#ta_right');">
+                  <p>TA RIGHT</p>
+              </div>
+            </div>
+
+            <div class="row" id="info-bottom">
+                <div class="col-6">
+                  <p>VERSION 2022.05.4</p>
+                </div>
+                <div class="col-6">
+                  <p id="name">EMERGENCY LIGHTING CONTROL</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script>
+
+
+            var lightR;
+            var lightG;
+            var lightB;
+            var resourceName;
+            var streamSound;
+            var panelKey;
+            
+
+            function addzeros(number, length) {
+                var num = '' + number;
+                while (num.length < length) {
+                    num = '0' + num;
+                }
+                return num;
+            }
+
+            function buttonPressed(button){
+                $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": button}));
+                if ($(button).hasClass("buttonActive")){
+                    $(button).removeClass("buttonActive");
+                }else{
+                    $(button).addClass("buttonActive");
+                }
+            }
+
+            function patternButtonPressed(button){
+                if (!$(button).hasClass("buttonActive")){
+                    if($("#prmlpat").hasClass("buttonActive")){
+                        $("#prmlpat").removeClass("buttonActive");
+                        $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": "#prmlpat"}));
+                    }
+
+                    if($("#seclpat").hasClass("buttonActive")){
+                        $("#seclpat").removeClass("buttonActive");
+                        $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": "#seclpat"}));
+                    }
+
+                    if($("#wrnlpat").hasClass("buttonActive")){
+                        $("#wrnlpat").removeClass("buttonActive");
+                        $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": "#wrnlpat"}));
+                    }
+
+                    $(button).addClass("buttonActive");
+
+                    $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": button}));
+                }
+            }
+
+            function taButtonPressed(button){
+                if (!$(button).hasClass("buttonActive")){
+                    if($("#ta_center").hasClass("buttonActive")){
+                        $("#ta_center").removeClass("buttonActive");
+                        $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": "#ta_center"}));
+                    }
+
+                    if($("#ta_left").hasClass("buttonActive")){
+                        $("#ta_left").removeClass("buttonActive");
+                        $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": "#ta_left"}));
+                    }
+
+                    if($("#ta_right").hasClass("buttonActive")){
+                        $("#ta_right").removeClass("buttonActive");
+                        $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": "#ta_right"}));
+                    }
+
+                    $(button).addClass("buttonActive");
+
+                    $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": button}));
+                }else{
+                    $(button).removeClass("buttonActive");
+                    $.post('https://' + resourceName + '/buttonpressed', JSON.stringify({"button": button}));
+                }
+            }
+
+            window.addEventListener('message', (event) => {
+                if (event.data.type == 'sound') {
+                    streamSound = new Audio("sounds/" + event.data.sound + ".ogg");
+                    streamSound.load();
+                    streamSound.volume = event.data.volume;
+                    streamSound.play();
+                }
+
+                if (event.data.type === 'openPanel') {
+                    $("#panel").css("display", "flex");
+                    
+                    lightR = event.data.light.red;
+                    lightG = event.data.light.green;
+                    lightB = event.data.light.blue;
+                    resourceName = event.data.name;
+                    panelKey = event.data.panelkey;
+
+                    var stylesheet = $(document)[0].styleSheets[0];
+                    stylesheet.insertRule(".buttonActive { color: rgb(" + lightR + ", "  + lightG + ", "  + lightB + "); border-color: rgb(" + lightR + ", "  + lightG + ", "  + lightB + "); }", stylesheet.cssRules.length);
+                    $("#pattern-number").css("color", "rgb(" + lightR + ", "  + lightG + ", "  + lightB + ")");
+                }
+                
+                if (event.data.type == 'closePanel') {
+                    $("#panel").css("display", "none");
+                }
+
+                if (event.data.type == 'updateLight') {
+                    if (event.data.on){
+                        $("#light-" + event.data.light).css("background-color", "rgb(" + event.data.lightColor + ");")
+                    } else {
+                        $("#light-" + event.data.light).css("background-color", "rgb(35, 35, 35);");
+                    }
+                }
+
+                if (event.data.type == 'updateButton') {
+                    if (event.data.on){
+                        $("#" + event.data.button).addClass("buttonActive");
+                    } else {
+                        $("#" + event.data.button).removeClass("buttonActive");
+                    }
+                }
+
+                if (event.data.type == 'updatePatternDisplay') {
+                    $("#pattern-number").text(addzeros(event.data.pattern, 3));
+                }
+
+                if (event.data.type == 'updateStageDisplay') {
+                    if (event.data.stage == 1){
+                        $("#stageone").css("background-color", "rgb(" + lightR + ", "  + lightG + ", "  + lightB + ")");
+                        $("#stagetwo").css("background-color", "rgb(35, 35, 35)");
+                        $("#stagethree").css("background-color", "rgb(35, 35, 35)");
+                    }else if (event.data.stage == 2) {
+                        $("#stageone").css("background-color", "rgb(35, 35, 35)");
+                        $("#stagetwo").css("background-color", "rgb(" + lightR + ", "  + lightG + ", "  + lightB + ")");
+                        $("#stagethree").css("background-color", "rgb(35, 35, 35)");
+                    }else if (event.data.stage == 3) {
+                        $("#stageone").css("background-color", "rgb(35, 35, 35)");
+                        $("#stagetwo").css("background-color", "rgb(35, 35, 35)");
+                        $("#stagethree").css("background-color", "rgb(" + lightR + ", "  + lightG + ", "  + lightB + ")");
+                    }else {
+                        $("#stageone").css("background-color", "rgb(35, 35, 35)");
+                        $("#stagetwo").css("background-color", "rgb(35, 35, 35)");
+                        $("#stagethree").css("background-color", "rgb(35, 35, 35)");
+                    }
+                }
+            });
+
+            $(document).on("keypress", function (data) {
+                if (data.key == panelKey) { // ` key
+                    $.post('https://' + resourceName + '/stopfocus', JSON.stringify({}));
+                }
+            });
+
+            
+            $("#panel").draggable();
+       </script>
+    </body>
+</html>

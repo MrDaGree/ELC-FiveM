@@ -1,0 +1,329 @@
+{
+  "description": "elc cvpi modkit",
+  "version": 1.0,
+  "interface": {
+     "activationtype": "manual",
+     "infopanelbuttonlightcolor": {
+        "red": 255,
+        "green": 60,
+        "blue": 60
+     }
+  },
+  "settings": {
+    "pattern_library": "leds",
+    "steadyburn": {
+      "enabled": false,
+      "steadyburn_misc": "misc_o"
+    },
+    "cruiselights": {
+      "enabled": true,
+      "miscs": [ "misc_a", "misc_f", "misc_i", "misc_p" ]
+    },
+    "usetrafficadvisor": true,
+    "stagethreeautosiren": false,
+    "default_siren_activate_stage": 3,
+    "alleylighting": {
+      "enabled": true,
+      "miscs":  { "left": "misc_a", "right": "misc_f" }
+    },
+    "lightcolors": {
+      "left": "red",
+      "right": "blue",
+      "traf": "amber",
+      "aux": "white"
+    }
+  },
+  "miscs": {
+    "setup": {
+      "misc_a": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_b": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_c": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_d": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_e": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_f": {
+        "color": "right",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": -45.0
+      },
+      "misc_g": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_h": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_1": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_2": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_i": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_j": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_k": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_l": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_m": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_n": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_o": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_p": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_q": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_r": {
+        "color": "left",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": 45.0
+      },
+      "misc_s": {
+        "color": "traf",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "misc_t": {
+        "color": "traf",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "misc_u": {
+        "color": "traf",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "misc_v": {
+        "color": "traf",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "misc_w": {
+        "color": "traf",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "misc_x": {
+        "color": "traf",
+        "offset": {
+          "x": 0.14,
+          "y": 0,
+          "z": 0
+        }
+      }
+    }
+  },
+  "sounds": {
+    "mainhorn": {
+        "interruptssiren": true,
+        "audiostring": "SIRENS_AIRHORN"
+    },
+    "srntone1": {
+        "allowuse": true,
+        "audiostring": "VEHICLES_HORNS_SIREN_1"
+    },
+    "srntone2": {
+        "allowuse": true,
+        "audiostring": "VEHICLES_HORNS_SIREN_2"
+    },
+    "srntone3": {
+        "allowuse": true,
+        "audiostring": "VEHICLES_HORNS_POLICE_WARNING"
+    }
+  },
+  "traffic_advisor": {
+    "pattern_library": "traf",
+    "miscs": [
+      "misc_s",
+      "misc_t",
+      "misc_u",
+      "misc_v",
+      "misc_w",
+      "misc_x"
+    ]
+  },
+  "stage_one": {
+    "startpattern": 1,
+    "parkpatern": 3,
+    "miscs": [
+      "misc_i",
+      "misc_j",
+      "misc_k",
+      "misc_l",
+      "misc_m",
+      "misc_n",
+      "misc_o",
+      "misc_p",
+      "misc_q",
+      "misc_r"
+    ]
+  },
+  "stage_two": {
+    "startpattern": 1,
+    "parkpatern": 3,
+    "miscs": [
+      "misc_a",
+      "misc_b",
+      "misc_c",
+      "misc_d",
+      "misc_e",
+      "misc_f",
+      "misc_g",
+      "misc_h",
+      "misc_1",
+      "misc_2"
+    ]
+  }
+}
